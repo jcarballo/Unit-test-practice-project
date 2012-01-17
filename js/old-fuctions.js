@@ -1,15 +1,16 @@
 $(document).ready(function() {
-  jQuery.fn.selectCompare = function(){
-	  var values = [];
-	  var i = 0;
-	  this.each(function(){
-	     values[i++] = $(this).val();
-	  });
-		  return values;
+  var i = 0;
+  $(".check").click(function(){
+	  if($(this).attr("checked")){
+		  i++;
+		  if(i > 4){
+		  	alert('Maximum of 4 comparison parts');
+		  }
 	  }
-	  
-	  var attr = $("input:checked").selectCompare();
-	  alert(attr); 
+	  else{
+		  i--;
+	  }
+  });
 });
 
 
